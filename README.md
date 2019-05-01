@@ -61,6 +61,9 @@
 ### 5. 特徵工程
 * 為了將交易資料合併進來，需要針對交易資料進行特徵抽取的動作，並新增出有意義的新特徵。
 * 數據類別不平衡是此次資料集非常常見的問題，因為流失(is_churn = 1)與非流失(is_churn = 0)比例懸殊，需要進行處理。
+> * 調整模型參數class_weight，加大對少數樣本(流失，is_churn = 1)的錯誤懲罰。
+> * 使用過採樣(Oversampling)，目前使用較好的方式為SMOTE。
+> * 使用欠採樣(Undersampling)，嘗試過的方法有Tomek Links, Near Miss
 
 ### 6. 模型選擇
 * 初步先行定義為分類問題(流失/非流失)，選擇模型Decision Tree, Random Forest等模型。

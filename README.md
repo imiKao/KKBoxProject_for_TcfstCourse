@@ -61,12 +61,13 @@
 ### 5. 特徵工程
 * 為了將交易資料合併進來，需要針對交易資料進行特徵抽取的動作，並新增出有意義的新特徵。
 * 數據類別不平衡是此次資料集非常常見的問題，因為流失(is_churn = 1)與非流失(is_churn = 0)比例懸殊，需要進行處理。
-> * 調整模型參數class_weight，加大對少數樣本(流失，is_churn = 1)的錯誤懲罰。
-> * 使用過採樣(Oversampling)，目前使用較好的方式為SMOTE。
-> * 使用欠採樣(Undersampling)，嘗試過的方法有Tomek Links, Near Miss
+> * 調整模型參數`class_weight`，加大對少數樣本(流失，is_churn = 1)的錯誤懲罰。
+> * 使用過採樣(Oversampling)，目前使用較好的方式為`SMOTE`。
+> * 使用欠採樣(Undersampling)，嘗試過的方法有`Tomek Links`, `Near Miss`
 
 ### 6. 模型選擇
-* 初步先行定義為分類問題(流失/非流失)，選擇模型Decision Tree, Random Forest等模型。
+* 初步先行定義為分類問題(流失/非流失)，選擇模型`Decision Tree`, `Random Forest`等模型。
+* `模型調參`(主要針對各模型的參數以GridSearchCV調節參數，找到較佳的參數組合)
 
 ### 7. 模型驗證
-* 由於Raw Data資料集有數據(類別)不平衡問題，在模型驗證指標上無法只單純以Accuracy(準確度)來做判斷(因為容易受大數量樣本影響)，這邊引入常用的混淆矩陣(confision matrix)，並觀察Precision(精確率)、Recall(召回率)以及AUC(Area Under ROC Curve)等指標進行討論確認模型效能。
+* 由於Raw Data資料集有數據(類別)不平衡問題，在模型驗證指標上無法只單純以`Accuracy`(準確度)來做判斷(因為容易受大數量樣本影響)，這邊引入常用的`混淆矩陣(confision matrix)`，並觀察`Precision(精確率)`、`Recall(召回率)`以及`AUC(Area Under ROC Curve)`等指標進行討論確認模型效能。

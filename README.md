@@ -71,4 +71,4 @@
 
 ### 7. 模型驗證
 * 由於Raw Data資料集有數據(類別)不平衡問題，在模型驗證指標上無法只單純以`Accuracy`(準確度)來做判斷(因為容易受大數量樣本影響)，這邊引入常用的`混淆矩陣(confision matrix)`，並觀察`Precision(精確率)`、`Recall(召回率)`以及`AUC(Area Under ROC Curve)`等指標進行討論確認模型效能。
-* 加入logloss討論預測結果。
+* 後續進一步討論需加入logloss討論預測結果。
